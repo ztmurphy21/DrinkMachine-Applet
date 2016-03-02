@@ -125,10 +125,14 @@ private class LemonListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            inputMoney = Double.parseDouble(tendered.getText());
+            if(inputMoney < 1){
+                status.setText("Please put in 0.75.");
+            }
             if (avLemonLime >0 ){
             orderTotal.setText("$0.75");
             avLemonLime = avLemonLime - 1;
-            inputMoney = Double.parseDouble(tendered.getText());
+
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
             status.setText("");
@@ -143,6 +147,10 @@ private class GrapeListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            inputMoney = Double.parseDouble(tendered.getText());
+            if(inputMoney <1){
+                status.setText("Please put in 0.75.");
+            }
                if (avGrape >0 ){
             orderTotal.setText("$0.75");
             avGrape = avGrape - 1;
@@ -162,6 +170,10 @@ private class BWaterListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            inputMoney = Double.parseDouble(tendered.getText());
+            if(inputMoney <1){
+                status.setText("Please put in 0.75.");
+            }
                 if (avBWater >0 ){
             orderTotal.setText("$0.75");
             avBWater = avBWater - 1;
@@ -181,6 +193,10 @@ private class ColaListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+            inputMoney = Double.parseDouble(tendered.getText());
+            if(inputMoney <1){
+                status.setText("Please put in 0.75.");
+            }
                 if (avCola >0 ){
             orderTotal.setText("$0.75");
             avCola = avCola - 1;
@@ -200,6 +216,10 @@ private class RBListener implements ActionListener{
 
         @Override
         public void actionPerformed(ActionEvent ae) {
+                inputMoney = Double.parseDouble(tendered.getText());
+            if(inputMoney <1){
+                status.setText("Please put in 0.75.");
+            }
             if (avRb >0 ){
             orderTotal.setText("$0.75");
             avRb = avRb - 1;
