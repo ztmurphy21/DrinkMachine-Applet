@@ -131,6 +131,7 @@ private class LemonListener implements ActionListener{
             inputMoney = Double.parseDouble(tendered.getText());
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
+            status.setText("");
             }else{
                 status.setText("Sorry that item is out of stock!");
             }   
@@ -148,6 +149,7 @@ private class GrapeListener implements ActionListener{
             inputMoney = Double.parseDouble(tendered.getText());
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
+            status.setText("");
             }else{
                 status.setText("Sorry that item is out of stock!");
                 change.setText("0.00");
@@ -166,6 +168,7 @@ private class BWaterListener implements ActionListener{
             inputMoney = Double.parseDouble(tendered.getText());
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
+            status.setText("");
             }else{
                 status.setText("Sorry that item is out of stock!");
                 change.setText("0.00");
@@ -184,6 +187,7 @@ private class ColaListener implements ActionListener{
             inputMoney = Double.parseDouble(tendered.getText());
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
+            status.setText("");
             }else{
                 status.setText("Sorry that item is out of stock!");
                 change.setText("0.00");
@@ -202,6 +206,7 @@ private class RBListener implements ActionListener{
             inputMoney = Double.parseDouble(tendered.getText());
             changeGiven = inputMoney - 0.75;
             change.setText(String.valueOf(changeGiven));
+            status.setText("");
             }else{
                 status.setText("Sorry that item is out of stock!");
                 change.setText("0.00");
