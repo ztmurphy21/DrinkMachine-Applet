@@ -5,6 +5,7 @@
  */
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -48,23 +49,25 @@ double inputMoney = 0.0;
  
  
     public void init() {
-        buildSodaOptionsPanel();
+        this.setSize(400,300);
+       buildSodaOptionsPanel();
         
-        buildPanel();
+       buildPanel();
  
+        mainPanel();
 
-        add(main,BorderLayout.WEST);
-        add(sodaOptions,BorderLayout.EAST);
 
     }
 
     // TODO overwrite start(), stop() and destroy() methods
+    
+
 
 
 private void buildSodaOptionsPanel(){
     //declare panel
-    sodaOptions = new JPanel();
-    sodaOptions.setLayout(new GridLayout(5,1));
+    sodaOptions = new JPanel(new FlowLayout(FlowLayout.TRAILING));
+    sodaOptions.setLayout(new GridLayout(5,0));
     //making new label to give instructions
     JLabel sodaMessage = new JLabel ("Select from: ");
     //create radio buttons
@@ -90,7 +93,9 @@ private void buildSodaOptionsPanel(){
     
 }
 private void buildPanel(){
-    main = new JPanel();
+    main = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        main.setLayout(new GridLayout(0,1));
+
     JLabel inputMessage = new JLabel("Enter the amount tendered.");
     tendered = new JTextField(15);
     
@@ -119,6 +124,16 @@ private void buildPanel(){
     main.add(status);
 
 }
+
+ private void mainPanel(){
+     buildSodaOptionsPanel();
+     buildPanel();
+        add(main,BorderLayout.WEST);
+        add(sodaOptions,BorderLayout.EAST);
+     
+ }
+
+   
 
 
 private class LemonListener implements ActionListener{
