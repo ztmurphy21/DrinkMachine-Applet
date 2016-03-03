@@ -10,6 +10,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -71,8 +72,10 @@ private void buildSodaOptionsPanel(){
     //making new label to give instructions
     JLabel sodaMessage = new JLabel ("Select from: ");
     //create radio buttons
-     cola = new JButton("Cola");
-    lemonLime = new JButton("Lemon Lime");
+    ImageIcon colaIcon = new ImageIcon("cola.jpg"); 
+    cola = new JButton("Cola");
+    cola.setIcon(colaIcon);
+     lemonLime = new JButton("Lemon Lime");
      grape = new JButton ("Grape Sode");
      rootBeer = new JButton ("Root beer");
      bWater = new JButton ("Bottled Water");
