@@ -37,6 +37,7 @@ public class DrinkMachine extends JApplet {
  private JButton grape;
  private JButton rootBeer;
  private JButton bWater;
+ private ImageIcon colaIcon;
  
  int avCola = 20;
  int avLemonLime = 20;
@@ -72,8 +73,8 @@ private void buildSodaOptionsPanel(){
     //making new label to give instructions
     JLabel sodaMessage = new JLabel ("Select from: ");
     //create radio buttons
-    ImageIcon colaIcon = new ImageIcon("cola.jpg"); 
-    cola = new JButton("Cola");
+     colaIcon = new ImageIcon("cola.jpg"); 
+    cola = new JButton();
     cola.setIcon(colaIcon);
      lemonLime = new JButton("Lemon Lime");
      grape = new JButton ("Grape Sode");
