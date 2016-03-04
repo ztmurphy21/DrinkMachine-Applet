@@ -27,36 +27,38 @@ import javax.swing.JTextField;
 public class DrinkMachine extends JApplet {
 
  private JPanel sodaOptions; // to hold the selectrion of sodea buttons
- private JPanel main; 
- private JTextField tendered;
- private JTextField orderTotal;
- private JTextField change;
- private JTextField status;
- private JButton cola;
- private JButton lemonLime;
- private JButton grape;
- private JButton rootBeer;
- private JButton bWater;
- private ImageIcon colaIcon;
+ private JPanel main; //whole panel
+ private JTextField tendered; //amount of money put in 
+ private JTextField orderTotal; //total of order, possibly use for calcs
+ private JTextField change; //change dispensed 
+ private JTextField status; //if empty or not enough tendered 
+ private JButton cola; //button
+ private JButton lemonLime;//button
+ private JButton grape;//button
+ private JButton rootBeer;//button
+ private JButton bWater;//button
+ private ImageIcon colaIcon;//button
  
- int avCola = 20;
+ 
+ //default available cans for each item in machine will be reduces as selected.
+ int avCola = 20; 
  int avLemonLime = 20;
  int avGrape = 20;
  int avRb = 20;
  int avBWater = 20;
  
-double inputMoney = 0.0;
- double changeGiven = 0.0;
- double totalFunds = 0.0;
+double inputMoney = 0.0; //money that user puts in
+ double changeGiven = 0.0; //amount of change given
+ double totalFunds = 0.0; //total funds, might use this
  
- 
+ //main method in applet
     public void init() {
-        this.setSize(400,300);
-       buildSodaOptionsPanel();
-        
-       buildPanel();
+        this.setSize(400,300); //size of JApplet
+       buildSodaOptionsPanel(); //adding panel
+         
+       buildPanel(); //adding panel
  
-        mainPanel();
+        mainPanel(); //adding panel
 
 
     }
@@ -65,22 +67,25 @@ double inputMoney = 0.0;
     
 
 
-
+/*
+    The buildSodaOptionsPanel () method creates all items used in the sodaOptions JPanel
+    Also will implement action listeners for each button.
+    */
 private void buildSodaOptionsPanel(){
     //declare panel
     sodaOptions = new JPanel(new FlowLayout(FlowLayout.TRAILING));
-    sodaOptions.setLayout(new GridLayout(5,0));
-    //making new label to give instructions
+    sodaOptions.setLayout(new GridLayout(6,0));
+    
+//making new label to give instructions
     JLabel sodaMessage = new JLabel ("Select from: ");
-    //create radio buttons
-     colaIcon = new ImageIcon("cola.jpg"); 
-    cola = new JButton();
-    cola.setIcon(colaIcon);
-     lemonLime = new JButton("Lemon Lime");
+    
+//create radio buttons
+    cola = new JButton("Cola");
+    lemonLime = new JButton("Lemon Lime");
      grape = new JButton ("Grape Sode");
      rootBeer = new JButton ("Root beer");
      bWater = new JButton ("Bottled Water");
-    //layout manager for panel
+  
     
     //add everything
     cola.addActionListener(new ColaListener());
@@ -96,6 +101,10 @@ private void buildSodaOptionsPanel(){
     sodaOptions.add(bWater);
     
 }
+/*
+buildPanel() will hold the users tendered cash and status if item is out of stock
+or not enough funds are tendered
+*/
 private void buildPanel(){
     main = new JPanel(new FlowLayout(FlowLayout.LEFT));
         main.setLayout(new GridLayout(0,1));
@@ -129,6 +138,10 @@ private void buildPanel(){
 
 }
 
+/*
+mainPanel() will hold the panels that go into the whole program and will 
+locate them.
+*/
  private void mainPanel(){
      buildSodaOptionsPanel();
      buildPanel();
@@ -139,7 +152,9 @@ private void buildPanel(){
 
    
 
-
+/*
+ LemonListener is actionlistener if LemonLime is selected
+ */
 private class LemonListener implements ActionListener{
 
         @Override
@@ -162,6 +177,9 @@ private class LemonListener implements ActionListener{
     
 }
 
+/*
+GrapeListener is actionlistener is Grape is selected.
+*/
 private class GrapeListener implements ActionListener{
 
         @Override
@@ -184,6 +202,10 @@ private class GrapeListener implements ActionListener{
         }
     
 }
+
+/*
+BWaterListener is action listener is bwater is selected.
+*/
 
 private class BWaterListener implements ActionListener{
 
@@ -208,6 +230,9 @@ private class BWaterListener implements ActionListener{
     
 }
 
+/*
+Cola listener is action listener if cola is selected. 
+*/
 private class ColaListener implements ActionListener{
 
         @Override
@@ -230,6 +255,10 @@ private class ColaListener implements ActionListener{
         }
     
 }
+
+/*
+RBListener is action listener if RB is selected.
+*/
 
 private class RBListener implements ActionListener{
 
