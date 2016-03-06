@@ -38,6 +38,7 @@ public class DrinkMachine extends JApplet {
  private JButton rootBeer;//button
  private JButton bWater;//button
  private ImageIcon colaIcon;//button
+ double test;
  
  
  //default available cans for each item in machine will be reduces as selected.
@@ -78,6 +79,9 @@ private void buildSodaOptionsPanel(){
     
 //making new label to give instructions
     JLabel sodaMessage = new JLabel ("Select from: ");
+    
+
+ 
     
 //create radio buttons
     cola = new JButton("Cola");
@@ -160,10 +164,12 @@ private class LemonListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             inputMoney = Double.parseDouble(tendered.getText());
-            if(inputMoney < 1){
+            test = inputMoney;
+            if(test < .75){
+                change.setText("Invalid");
                 status.setText("Please put in 0.75.");
             }
-            if (avLemonLime >0 ){
+            if (avLemonLime > 0 ){
             orderTotal.setText("$0.75");
             avLemonLime = avLemonLime - 1;
 
@@ -185,8 +191,12 @@ private class GrapeListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             inputMoney = Double.parseDouble(tendered.getText());
-            if(inputMoney <1){
+            test = inputMoney;
+            if(test <.75){
+               change.setText("Invalid");
+
                 status.setText("Please put in 0.75.");
+
             }
                if (avGrape >0 ){
             orderTotal.setText("$0.75");
@@ -212,8 +222,11 @@ private class BWaterListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             inputMoney = Double.parseDouble(tendered.getText());
-            if(inputMoney <1){
+            test = inputMoney;
+            if(test <.75){
+                change.setText("Invalid");
                 status.setText("Please put in 0.75.");
+
             }
                 if (avBWater >0 ){
             orderTotal.setText("$0.75");
@@ -238,8 +251,11 @@ private class ColaListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
             inputMoney = Double.parseDouble(tendered.getText());
-            if(inputMoney <1){
+            test = inputMoney;
+            if(test <.75){
+                change.setText("Invalid");
                 status.setText("Please put in 0.75.");
+
             }
                 if (avCola >0 ){
             orderTotal.setText("$0.75");
@@ -265,8 +281,12 @@ private class RBListener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent ae) {
                 inputMoney = Double.parseDouble(tendered.getText());
-            if(inputMoney <1){
+                test = inputMoney;
+                
+            if(test <0.75){
+                change.setText("Invalid");
                 status.setText("Please put in 0.75.");
+                
             }
             if (avRb >0 ){
             orderTotal.setText("$0.75");
